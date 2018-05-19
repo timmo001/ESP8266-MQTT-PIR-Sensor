@@ -77,17 +77,18 @@ void reconnect() {
 
 void updateState() {
   long newState = digitalRead(SENSOR_PIN);
-  if (newState == HIGH) {
-    Serial.println("Motion detected");
-    digitalWrite(LED_BUILTIN, LOW); // Turn the status LED on
-  } else {
-    digitalWrite(LED_BUILTIN, HIGH); // Turn the status LED off
-  }
   if (newState != state) {
+    if (newState == HIGH) {
+      Serial.println("Motion detected");
+      digitalWrite(LED_BUILTIN, LOW); // Turn the status LED on
+    } else {
+      Serial.println("No Motion");        
+      digitalWrite(LED_BUILTIN, HIGH); // Turn the status LED off
+    }
     state = newState;
     sendState();
   }
-  delay(100);
+  delay(50);
 }
 
 void setup() {
