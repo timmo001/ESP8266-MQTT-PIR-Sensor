@@ -1,5 +1,5 @@
 # ESP8266 MQTT PIR Sensor [![Build Status](https://travis-ci.org/timmo001/ESP8266-MQTT-PIR-Sensor.svg?branch=master)](https://travis-ci.org/timmo001/ESP8266-MQTT-PIR-Sensor)
-ESP8266 MQTT PIR Sensor
+ESP8266 MQTT PIR Sensor. Compatible with Home Assistant's MQTT sensor and binary_sensor
 
 ## Hardware Example
 ![NodeMCU PIR Sensor](diagrams/nodemcu_pir_sensor.svg)
