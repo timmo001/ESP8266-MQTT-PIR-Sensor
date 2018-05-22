@@ -27,7 +27,7 @@ binary_sensor:
   payload_off: 0
 
 automation:
-  - alias: Kithen Motion Detected
+  - alias: Kitchen Motion Detected
     trigger:
       - platform: state
         entity_id: binary_sensor.kitchen_pir
