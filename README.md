@@ -16,7 +16,7 @@ ESP8266 MQTT PIR Sensor. Compatible with Home Assistant's MQTT `sensor` and `bin
 - Upload to your board of choice (Ctrl+Alt+U). This project was created specifically for the `NodeMCU` but can be configured to work with another WiFi board with some tinkering.
 
 ## Example Home Assistant Configuration
-This example creates a `binary_sensor` with an automation to brighten a `light_group`, if another light sensor is below a threshold and a someone is home, then dimming the lights after 20 minites if the PIR does not detect movement. This will only occur if the lights are still on.
+This example creates a `binary_sensor` with an automation to brighten a `light_group`, if another light sensor is below a threshold and a someone is home, then dimming the lights after 10 minites if the PIR does not detect movement. This will only occur if the lights are still on.
 
 ```yaml
 binary_sensor:
