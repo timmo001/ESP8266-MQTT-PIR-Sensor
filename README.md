@@ -1,8 +1,8 @@
 # ESP8266 MQTT PIR Sensor [![Build Status](https://travis-ci.org/timmo001/ESP8266-MQTT-PIR-Sensor.svg?branch=master)](https://travis-ci.org/timmo001/ESP8266-MQTT-PIR-Sensor)
 ESP8266 MQTT PIR Sensor
 
-## Hardware Setup
-
+## Hardware Example
+![NodeMCU PIR Sensor](diagrams/nodemcu_pir_sensor.svg)
 
 ## Software Setup
 - Using Atom or VS Code, install [Platform IO](https://platformio.org/platformio-ide)
