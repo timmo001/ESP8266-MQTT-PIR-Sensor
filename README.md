@@ -7,7 +7,7 @@ ESP8266 MQTT PIR Sensor. Compatible with Home Assistant's MQTT `sensor` and `bin
 ## Software Setup
 - Using Atom or VS Code, install [Platform IO](https://platformio.org/platformio-ide)
 - Once setup, install the `esp8266` embedded platform
-- Rename `src/setup-template.h` to `src/setup.h` and add your network, MQTT and lighting setup information. Take note of the `deviceName` you set. You will need this later to send MQTT messages.
+- Rename `src/setup-template.h` to `src/setup.h` and add your network, MQTT and lighting setup information. Take note of the `deviceName` you set. You will need this later to subscribe to MQTT messages.
 - Build the project (Ctrl+Alt+B) and check for any errors
 
   > If the build produces an error referencing dependencies, You will need to manually install these libraries:
