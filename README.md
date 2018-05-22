@@ -17,8 +17,51 @@ ESP8266 MQTT PIR Sensor
 
 ## Example Home Assistant Configuration
 ```yaml
-```
+binary_sensor:
+  platform: mqtt
+  name: Kitchen PIR
+  state_topic: sensor/pir001
+  payload_on: 1
+  payload_off: 0
 
-## Sample MQTT Payload
-```json
+automation:
+  - alias: Kithen Motion Detected
+    trigger:
+      - platform: state
+        entity_id: binary_sensor.kitchen_pir
+        to: 'on'
+    condition:
+      - condition: state
+        entity_id: group.phones
+        state: home
+      - condition: numeric_state
+        entity_id: sensor.sn1_ldr
+        below: '450'
+    action:
+      - alias: Wake Kitchen lights
+        data:
+          entity_id: group.kitchen
+          brightness_pct: 80
+        service: light.turn_on
+  
+  - alias: 'Reset kitchen lights 10 minutes after last movement'
+    trigger:
+      platform: state
+      entity_id: binary_sensor.kitchen_pir
+      to: 'off'
+      for:
+        minutes: 10
+    condition:
+      - condition: state
+        entity_id: group.phones
+        state: home
+      - condition: numeric_state
+        entity_id: sensor.sn1_ldr
+        below: '450'
+      - condition: state
+        entity_id: light.kitchen_room_lights
+        state: 'on'
+    action:
+      service: homeassistant.turn_on
+      entity_id: scene.reset_kitchen_lights
 ```
